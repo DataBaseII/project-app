@@ -1,0 +1,6 @@
+@import 'semantic-ui-css/semantic.css';
+@import './colors.css';
+
+body {
+	margin: 0;
+}
