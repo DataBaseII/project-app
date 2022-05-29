@@ -16,3 +16,8 @@ export function createMovie(body){
 export function deleteMovie(id){
   return axios.delete(`${ROUTE}/movies/${id}`); 
 } 
+
+
+export function updateMovie(id, body){
+  return axios.put(`${ROUTE}/movies/${id}`, body); 
+} 

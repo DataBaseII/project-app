@@ -4,3 +4,10 @@
 body {
 	margin: 0;
 }
+
+.header-title {
+	align-items:center;
+	justify-content:center;
+	display:flex; 
+	opacity:'0.8';
+}
