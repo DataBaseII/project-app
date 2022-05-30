@@ -101,7 +101,8 @@ export default function Movie() {
                 <Table.Row>
                   <Table.Cell>Idiomas</Table.Cell>
                   <Table.Cell>
-                    {movie.idioms.map((idiom) => `${idiom}  `)}
+                    {movie.idioms}
+                    {/* {movie.idioms.map((idiom) => `${idiom}  `)} */}
                   </Table.Cell>
                 </Table.Row>
               )}
