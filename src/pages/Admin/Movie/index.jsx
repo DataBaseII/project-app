@@ -20,7 +20,7 @@ export default function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [update, setUpdate] = useState(false)
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     getMovie(id)
@@ -41,20 +41,27 @@ export default function Movie() {
         </Dimmer>
       ) : (
         <>
-          <Header as="h2" className="header-title">
+          <Header as="h2" className="header-title font-title">
             <Icon name="film" />
             <Header.Content>{movie.name}</Header.Content>
           </Header>
           <Divider />
-          <EditMovie
-            movie={movie}
-            button={"Editar"}
-            icon={"edit"}
-            title={`Editar ${movie.name}`}
-            action={updateMovie}
-            update={setUpdate}
-          />
-          <DeleteMovie title={`Eliminar ${movie.name}`} action={deleteMovie} id={movie._id}/>
+          <div style={{ marginLeft:'80%', marginBottom:'2rem'}}>
+            <EditMovie
+              movie={movie}
+              button={"Editar"}
+              icon={"edit"}
+              title={`Editar ${movie.name}`}
+              action={updateMovie}
+              update={setUpdate}
+            />
+            <DeleteMovie
+              title={`Eliminar ${movie.name}`}
+              action={deleteMovie}
+              id={movie._id}
+            />
+          </div>
+
           {movie.video && (
             <Embed
               id={movie.video}
@@ -62,7 +69,7 @@ export default function Movie() {
               source="youtube"
             />
           )}
-          <Table>
+          <Table celled inverted >
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell width={8} />
@@ -130,7 +137,7 @@ export default function Movie() {
             </Table.Footer>
           </Table>
 
-          <div style={{ height: "300px" }}></div>
+          <div style={{ height: "100px" }}></div>
         </>
       )}
     </>

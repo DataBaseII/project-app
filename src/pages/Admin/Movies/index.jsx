@@ -7,7 +7,7 @@ import { getAllMovies } from "services/movies";
 import DefaultImage from "assets/default_image.png";
 import { createMovie } from "services/movies";
 
-export default function Movies() {
+export default function Movies({ title }) {
   const [movies, setMovies] = useState([]);
   const [update, setUpdate] = useState(false);
 
@@ -39,20 +39,24 @@ export default function Movies() {
 
   return (
     <>
-      <Navbar />
-      <Header as="h2" className="header-title">
+      {title ? null : <Navbar />}
+      <Header as="h2" className="header-title font-title">
         <Icon name="film" />
-        <Header.Content>Movies</Header.Content>
+        <Header.Content>{title ? title : "Movies"}</Header.Content>
       </Header>
       <Divider />
-      <AddMovie
-        movie={movie}
-        button={"Agregar"}
-        icon={"add"}
-        title={"Agregar Pelicula"}
-        action={createMovie}
-        update={setUpdate}
-      />
+      {title ? null : (
+        <div style={{ marginLeft: "90%", marginBottom: "2rem" }}>
+          <AddMovie
+            movie={movie}
+            button={"Agregar"}
+            icon={"add"}
+            title={"Agregar Pelicula"}
+            action={createMovie}
+            update={setUpdate}
+          />
+        </div>
+      )}
       <Grid>
         <Grid.Column width={1} />
         <Grid.Column width={14} verticalAlign="middle">

@@ -1,11 +1,15 @@
 import React from "react";
 import Navbar from "components/Navbar";
+import { Header, Divider } from "semantic-ui-react";
 
 export default function Categories() {
   return (
     <>
       <Navbar />
-      <h1>Categories</h1>
+      <Header as="h2" className="header-title font-title">
+        <Header.Content>Categorias</Header.Content>
+      </Header>
+      <Divider />
     </>
   );
 }

@@ -6,13 +6,13 @@ export default function Navbar() {
   return (
     <Menu fluid tabular>
       <Menu.Item>
-        <Link to="/home">Home</Link>
+        <Link to="/home" className="font-link">Home</Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to="/admin-movies">Movies</Link>
+        <Link to="/admin-movies" className="font-link">Movies</Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to="/admin-categories">Categories</Link>
+        <Link to="/admin-categories" className="font-link">Categories</Link>
       </Menu.Item>
     </Menu>
   )
