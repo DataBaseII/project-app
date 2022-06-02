@@ -22,6 +22,8 @@ Tener instalado:
 
 ### Levantar Server:
 
+`Nota: Levantar el server de python (project-api)`
+
 - Ejecutar `npm run start`
 
 ## Vistas
